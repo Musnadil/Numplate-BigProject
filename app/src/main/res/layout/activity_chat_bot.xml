@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatBotActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/separator"
+        />
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@id/et_chatbot_wrap"
+        />
+
+    <!--        tulis pesan-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_chatbot_wrap"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:boxBackgroundColor="@color/transparent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_send_chat">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_chatbot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tulis pesan.."
+            android:maxLines="3"
+            android:background="@color/transparent"
+            android:textColor="@color/black"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <!--        tombol kirim -->
+    <ImageView
+        android:id="@+id/btn_send_chat"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/send_mail"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/et_chatbot_wrap"
+        app:layout_constraintStart_toEndOf="@id/et_chatbot_wrap"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
