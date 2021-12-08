@@ -43,7 +43,7 @@
                 android:textSize="17sp"
                 android:textStyle="bold"
 
-                android:layout_marginStart="25dp"
+                android:layout_marginStart="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -57,10 +57,10 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/roboto_medium"
 
-                android:layout_marginStart="140dp"
+                android:layout_marginStart="240dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_no_plat"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"  />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_hist_masuk"
@@ -68,7 +68,7 @@
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/history_list"
-            tools:itemCount="100"
+            tools:itemCount="25"
             />
 
     </LinearLayout>
