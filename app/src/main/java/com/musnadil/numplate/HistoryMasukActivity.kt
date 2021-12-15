@@ -3,6 +3,7 @@ package com.musnadil.numplate
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.musnadil.numplate.Adapters.HistoryMasukAdapter
 import com.musnadil.numplate.Models.HistoryMasukModel
@@ -40,20 +41,45 @@ class HistoryMasukActivity : AppCompatActivity() {
         rvHistoryMasuk.adapter = historyMasukAdapter
     }
     private fun getHistoryMasuk(){
+//        val api = ApiRetrofit().getInstance()
+//        api.dataHistoryMasuk().enqueue(object  : Callback<HistoryMasukModel>{
+//            override fun onResponse(
+//                call: Call<HistoryMasukModel>,
+//                response: Response<HistoryMasukModel>
+//            ) {
+//                if(response.isSuccessful){
+//                    if(response.body()?.response==true){
+//                        val listHistoryMasuk = response.body()!!.history_masuk
+//                        historyMasukAdapter.setData(listHistoryMasuk)
+//                    }
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<HistoryMasukModel>, t: Throwable) {
+//                Log.e("HistoryMasukActivity",t.toString())
+//            }
+//
+//        })
         api.dataHistoryMasuk().enqueue(object : Callback<HistoryMasukModel>{
-            override fun onResponse(call: Call<HistoryMasukModel>, response: Response<HistoryMasukModel>) {
+            override fun onResponse(
+                call: Call<HistoryMasukModel>,
+                response: Response<HistoryMasukModel>
+            ) {
                 if(response.isSuccessful){
                     val listHistoryMasuk = response.body()!!.history_masuk
                     historyMasukAdapter.setData(listHistoryMasuk)
+//                    if(response.body()?.response==true){
+//                        val listHistoryMasuk = response.body()!!.history_masuk
+//                        historyMasukAdapter.setData(listHistoryMasuk)
+//                    }
                 }
+
             }
 
             override fun onFailure(call: Call<HistoryMasukModel>, t: Throwable) {
                 Log.e("HistoryMasukActivity",t.toString())
             }
-
         })
-
     }
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

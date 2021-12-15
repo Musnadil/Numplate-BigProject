@@ -4,7 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
+import com.musnadil.numplate.Models.LoginModel
+import com.musnadil.numplate.Models.ResponseLogin
+import com.musnadil.numplate.Util.ApiRetrofit
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +20,10 @@ class MainActivity : AppCompatActivity() {
         hist_keluar()
         cust_service()
         logout()
+
+    }
+
+    private fun getuname(){
 
     }
     private fun hist_masuk(){

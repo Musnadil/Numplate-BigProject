@@ -9,6 +9,7 @@ import com.musnadil.numplate.Models.HistoryMasukModel
 import com.musnadil.numplate.R
 
 class HistoryMasukAdapter(
+
     val history_masuk:ArrayList<HistoryMasukModel.Data_masuk>
     ): RecyclerView.Adapter<HistoryMasukAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
@@ -27,9 +28,9 @@ class HistoryMasukAdapter(
         val tv_plat = view.findViewById<TextView>(R.id.tv_plat)
         val tv_time = view.findViewById<TextView>(R.id.tv_time)
     }
-    public fun setData(history : List<HistoryMasukModel.Data_masuk>){
+    public fun setData(recap : List<HistoryMasukModel.Data_masuk>){
         history_masuk.clear()
-        history_masuk.addAll(history)
+        history_masuk.addAll(recap)
         notifyDataSetChanged()
     }
 }

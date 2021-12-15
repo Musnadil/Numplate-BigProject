@@ -3,32 +3,73 @@ package com.musnadil.numplate
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.widget.doOnTextChanged
-import kotlinx.android.synthetic.main.activity_masuk.*
+import android.util.Log
+import android.widget.Toast
+import com.musnadil.numplate.Models.ResponseLogin
+import com.musnadil.numplate.Util.ApiRetrofit
+import com.musnadil.numplate.databinding.ActivityMasukBinding
+import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MasukActivity : AppCompatActivity() {
+    private var binding : ActivityMasukBinding? = null
+    private var nipy : String = ""
+    private var pass : String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMasukBinding.inflate(layoutInflater)
         supportActionBar?.hide()
-        setContentView(R.layout.activity_masuk)
-        masuk()
-    }
+        setContentView(binding!!.root)
+        binding!!.btnMasuk.setOnClickListener {
+            nipy = binding!!.etNipy.text.toString()
+            pass = binding!!.etPassword.text.toString()
 
-    private fun masuk(){
-        btn_masuk.setOnClickListener {
-            if(et_plat.text.toString().isEmpty()){
-                plat_wrap.error = "No Plat tidak boleh kosong"
-                password_wrap.error = null
-            }else if (et_password.text.toString().isEmpty()) {
-                password_wrap.error = "Password tidak boleh kosong"
-                plat_wrap.error = null
-            }else{
-                plat_wrap.error = null
-                password_wrap.error = null
-                intent = Intent(this,MainActivity::class.java)
-                startActivity(intent)
-                finish()
+
+            when {
+                nipy == ""->{
+                    binding!!.nipyWrap.error = "NIPY tidak boleh kosong"
+                }
+                pass == "" ->{
+                    binding!!.passwordWrap.error = "Password tidak boleh kosong"
+                } else ->{
+                    getData()
+                }
             }
+
         }
+
     }
+    private fun getData(){
+        val api = ApiRetrofit().getInstance()
+        api.login(nipy,pass).enqueue(object : Callback<ResponseLogin>{
+            override fun onResponse(call: Call<ResponseLogin>, response: Response<ResponseLogin>) {
+                if(response.isSuccessful){
+                    if(response.body()?.response==true){
+
+                        startActivity(Intent(this@MasukActivity,MainActivity::class.java))
+                        finish()
+                    }else{
+                        Toast.makeText(
+                            this@MasukActivity,
+                            "login gagal, periksa kembali NIPY dan Password",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                } else {
+                    Toast.makeText(
+                        this@MasukActivity,
+                        "error",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseLogin>, t: Throwable) {
+                Log.e("ada kesalahan di coding","${t.message}")
+            }
+            })
+        }
 }

@@ -48,13 +48,13 @@
 
         <!--        Input text username-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/plat_wrap"
+            android:id="@+id/nipyWrap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="65dp"
             android:layout_marginEnd="65dp"
             android:layout_marginTop="10dp"
-            android:hint="No Plat"
+            android:hint="NIPY"
             android:textColorHint="@color/bluetext"
             app:boxBackgroundColor="@color/transparent"
             app:errorEnabled="true"
@@ -62,7 +62,7 @@
             >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_plat"
+                android:id="@+id/etNipy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
@@ -74,7 +74,7 @@
 
         <!--        Input text password-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password_wrap"
+            android:id="@+id/passwordWrap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="65dp"
@@ -89,7 +89,7 @@
             >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_password"
+                android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
