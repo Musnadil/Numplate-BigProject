@@ -13,7 +13,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class HistoryMasukActivity : AppCompatActivity() {
+class RekapActivity : AppCompatActivity() {
 
     private val api by lazy { ApiRetrofit().endpoint }
     private lateinit var historyMasukAdapter: HistoryMasukAdapter

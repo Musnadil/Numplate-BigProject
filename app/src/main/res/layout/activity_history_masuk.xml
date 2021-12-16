@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HistoryMasukActivity">
+    tools:context=".RekapActivity">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -34,10 +34,9 @@
             android:background="@color/bluesky">
 
             <TextView
-                android:id="@+id/tv_no_plat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nomer Plat"
+                android:text="No. Plat"
                 android:fontFamily="@font/roboto_medium"
                 android:textColor="@color/white"
                 android:textSize="17sp"
@@ -51,16 +50,45 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Waktu"
+                android:text="Tanggal"
                 android:textColor="@color/white"
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/roboto_medium"
 
-                android:layout_marginStart="240dp"
+                android:layout_marginStart="161dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masuk"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_medium"
+
+                android:layout_marginStart="260dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Keluar"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_medium"
+
+                android:layout_marginStart="335dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"  />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_hist_masuk"

@@ -20,13 +20,17 @@ class HistoryMasukAdapter(
     override fun onBindViewHolder(holder: HistoryMasukAdapter.ViewHolder, position: Int) {
         val history = history_masuk[position]
         holder.tv_plat.text = history.nomer_plat
-        holder.tv_time.text = history.time
+        holder.tv_tanggal.text = history.tanggal
+        holder.tv_waktu_masuk.text = history.waktu_masuk
+        holder.tv_waktu_keluar.text = history.waktu_keluar
     }
 
     override fun getItemCount() = history_masuk.size
     class ViewHolder(view: View):RecyclerView.ViewHolder(view){
         val tv_plat = view.findViewById<TextView>(R.id.tv_plat)
-        val tv_time = view.findViewById<TextView>(R.id.tv_time)
+        val tv_tanggal = view.findViewById<TextView>(R.id.tv_tanggal)
+        val tv_waktu_masuk = view.findViewById<TextView>(R.id.tv_waktu_masuk)
+        val tv_waktu_keluar = view.findViewById<TextView>(R.id.tv_waktu_keluar)
     }
     public fun setData(recap : List<HistoryMasukModel.Data_masuk>){
         history_masuk.clear()

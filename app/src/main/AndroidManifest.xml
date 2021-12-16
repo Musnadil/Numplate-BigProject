@@ -19,7 +19,7 @@
             android:name=".HistoryKeluarActivity"
             android:exported="true" />
         <activity
-            android:name=".HistoryMasukActivity"
+            android:name=".RekapActivity"
             android:exported="true" />
         <activity
             android:name=".MasukActivity"

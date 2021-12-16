@@ -17,7 +17,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-<!--    Tampilan selamat datang user-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -74,7 +73,7 @@
 
 <!--        Tampilan card view riwayat kendaraan masuk-->
         <androidx.cardview.widget.CardView
-            android:id="@+id/btn_hist_masuk"
+            android:id="@+id/btn_history"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:backgroundTint="@color/white"
@@ -87,44 +86,13 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icon_hist_masuk"
+                android:src="@drawable/icon_history"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Riwayat Kendaraan Masuk"
-                android:textSize="20sp"
-                android:textColor="@color/bluesky"
-                android:fontFamily="@font/roboto_medium"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="105dp"
-                />
-
-        </androidx.cardview.widget.CardView>
-
-<!--        Tampilan card view riwayat kendaraan keluar-->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/btn_hist_keluar"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:backgroundTint="@color/white"
-            app:cardCornerRadius="25dp"
-            app:cardElevation="5dp"
-
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/icon_hist_keluar"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Riwayat Kendaraan Keluar"
+                android:text="Rekap Keluar Masuk"
                 android:textSize="20sp"
                 android:textColor="@color/bluesky"
                 android:fontFamily="@font/roboto_medium"

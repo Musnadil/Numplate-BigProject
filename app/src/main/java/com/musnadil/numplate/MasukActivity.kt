@@ -54,7 +54,7 @@ class MasukActivity : AppCompatActivity() {
                     }else{
                         Toast.makeText(
                             this@MasukActivity,
-                            "login gagal, periksa kembali NIPY dan Password",
+                            "Login gagal, periksa kembali NIPY dan Password",
                             Toast.LENGTH_LONG
                         ).show()
                     }
@@ -68,7 +68,7 @@ class MasukActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ResponseLogin>, t: Throwable) {
-                Log.e("ada kesalahan di coding","${t.message}")
+                Log.e("Terjadi kesalahan","${t.message}")
             }
             })
         }

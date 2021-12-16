@@ -4,12 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
-import com.musnadil.numplate.Models.LoginModel
-import com.musnadil.numplate.Models.ResponseLogin
-import com.musnadil.numplate.Util.ApiRetrofit
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.Call
-import retrofit2.Callback
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,23 +12,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
         hist_masuk()
-        hist_keluar()
         cust_service()
         logout()
 
     }
 
-    private fun getuname(){
-
-    }
     private fun hist_masuk(){
-        btn_hist_masuk.setOnClickListener {
-            startActivity(Intent(this,HistoryMasukActivity::class.java))
-        }
-    }
-    private fun hist_keluar(){
-        btn_hist_keluar.setOnClickListener {
-            startActivity(Intent(this,HistoryKeluarActivity::class.java))
+        btn_history.setOnClickListener {
+            startActivity(Intent(this,RekapActivity::class.java))
         }
     }
 

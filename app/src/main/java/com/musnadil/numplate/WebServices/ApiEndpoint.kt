@@ -9,7 +9,7 @@ import retrofit2.http.POST
 
 interface ApiEndpoint {
 
-    @POST("data.php")
+    @POST("datajoin.php")
     fun dataHistoryMasuk(): Call<HistoryMasukModel>
 
     @FormUrlEncoded

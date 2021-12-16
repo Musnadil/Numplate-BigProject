@@ -15,105 +15,121 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <!--        logo poltek-->
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo_poltek"
+        android:layout_marginTop="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center"
+        android:orientation="vertical"
         >
-<!--        logo poltek-->
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/logo_poltek"
-            />
-<!--        text masuk-->
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="65dp"
-            android:layout_marginEnd="65dp"
-            android:layout_marginTop="100dp"
-            android:fontFamily="@font/roboto_medium"
-            android:text="Masuk"
-            android:textColor="@color/graytext"
-            android:textSize="48sp"/>
 
-        <!--        Input text username-->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/nipyWrap"
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="65dp"
-            android:layout_marginEnd="65dp"
-            android:layout_marginTop="10dp"
-            android:hint="NIPY"
-            android:textColorHint="@color/bluetext"
-            app:boxBackgroundColor="@color/transparent"
-            app:errorEnabled="true"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="340dp"
 
             >
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etNipy"
+            <!--        text masuk-->
+            <TextView
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/transparent"
-                android:singleLine="true"
-                android:imeOptions="actionNext"
-                
-                />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginStart="65dp"
+                android:layout_marginEnd="65dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Masuk"
+                android:textColor="@color/graytext"
+                android:textSize="48sp"/>
 
-        <!--        Input text password-->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passwordWrap"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="65dp"
-            android:layout_marginEnd="65dp"
-            android:layout_marginTop="10dp"
-
-            app:endIconMode="password_toggle"
-            android:hint="Password"
-            android:textColorHint="@color/bluetext"
-            app:boxBackgroundColor="@color/transparent"
-            app:errorEnabled="true"
-            >
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etPassword"
+            <!--        Input text username-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nipyWrap"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/transparent"
-                android:inputType="textPassword"
-                android:singleLine="true"
-                android:imeOptions="actionDone"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginStart="65dp"
+                android:layout_marginEnd="65dp"
+                android:layout_marginTop="10dp"
+                android:hint="NIPY"
+                android:textColorHint="@color/bluetext"
+                app:boxBackgroundColor="@color/transparent"
+                app:errorEnabled="true"
 
-        <!--        Button masuk-->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_masuk"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+                >
 
-            android:layout_marginStart="65dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="65dp"
-            android:backgroundTint="@color/bluesky"
-            android:fontFamily="@font/roboto_medium"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNipy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:imeOptions="actionNext"
 
-            android:text="Masuk"
-            android:textSize="15dp"
-            app:cornerRadius="20dp" />
-    </LinearLayout>
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
+            <!--        Input text password-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordWrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="65dp"
+                android:layout_marginEnd="65dp"
+                android:layout_marginTop="10dp"
+
+                app:endIconMode="password_toggle"
+                android:hint="Password"
+                android:textColorHint="@color/bluetext"
+                app:boxBackgroundColor="@color/transparent"
+                app:errorEnabled="true"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        Button masuk-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_masuk"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="65dp"
+                android:backgroundTint="@color/bluesky"
+                android:fontFamily="@font/roboto_medium"
+
+                android:text="Masuk"
+                android:textSize="15dp"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
