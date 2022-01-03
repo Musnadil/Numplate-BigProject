@@ -48,7 +48,7 @@ class MasukActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ResponseLogin>, response: Response<ResponseLogin>) {
                 if(response.isSuccessful){
                     if(response.body()?.response==true){
-
+//                        tv_username.text = response.body()?.data!!.nama
                         startActivity(Intent(this@MasukActivity,MainActivity::class.java))
                         finish()
                     }else{
@@ -61,7 +61,7 @@ class MasukActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(
                         this@MasukActivity,
-                        "error",
+                        "error response failure",
                         Toast.LENGTH_LONG
                     ).show()
                 }

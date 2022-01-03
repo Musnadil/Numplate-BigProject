@@ -26,6 +26,7 @@ class HistoryMasukAdapter(
     }
 
     override fun getItemCount() = history_masuk.size
+
     class ViewHolder(view: View):RecyclerView.ViewHolder(view){
         val tv_plat = view.findViewById<TextView>(R.id.tv_plat)
         val tv_tanggal = view.findViewById<TextView>(R.id.tv_tanggal)
@@ -37,4 +38,5 @@ class HistoryMasukAdapter(
         history_masuk.addAll(recap)
         notifyDataSetChanged()
     }
+
 }

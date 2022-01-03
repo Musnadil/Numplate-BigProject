@@ -1,6 +1,7 @@
 package com.musnadil.numplate
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -25,7 +26,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun cust_service(){
         btn_customer_service.setOnClickListener {
-            startActivity(Intent(this,ChatBotActivity::class.java))
+            intent = Intent(Intent.ACTION_VIEW)
+            intent.setData(Uri.parse
+                ("http://192.168.43.61:5000/")
+            )
+            startActivity(intent)
         }
     }
     private fun logout(){

@@ -21,7 +21,7 @@ class ApiRetrofit {
         val gson = GsonBuilder().setLenient().create()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.43.61/bigproject/numplate/")
+            .baseUrl("http://192.168.43.172/bigproject/numplate/")
             .client(client)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
@@ -29,12 +29,11 @@ class ApiRetrofit {
     }
     fun getRetrofitClient(): Retrofit{
         return Retrofit.Builder()
-            .baseUrl("http://192.168.43.61/bigproject/numplate/")
+            .baseUrl("http://192.168.43.172/bigproject/numplate/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
     fun getInstance():ApiEndpoint{
         return getRetrofitClient().create(ApiEndpoint::class.java)
     }
-
 }

@@ -96,7 +96,7 @@
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/history_list"
-            tools:itemCount="25"
+            tools:itemCount="10"
             />
 
     </LinearLayout>
